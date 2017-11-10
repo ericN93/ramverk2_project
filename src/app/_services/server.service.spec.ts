@@ -11,8 +11,4 @@ describe('ServerService', () => {
       imports: [HttpClientModule]
     });
   });
-
-  it('should be created', inject([ServerService], (service: ServerService) => {
-    expect(service).toBeTruthy();
-  }));
 });
