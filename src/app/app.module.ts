@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MaterialModule } from './material.module';
 import { AppRoutes } from './app.routes';
@@ -22,7 +23,8 @@ import { ServerService } from './_services/server.service';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    RouterModule.forRoot(AppRoutes)
+    RouterModule.forRoot(AppRoutes),
+    HttpClientModule
   ],
   providers: [ServerService],
   bootstrap: [AppComponent]
