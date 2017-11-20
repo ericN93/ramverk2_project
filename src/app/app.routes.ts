@@ -3,6 +3,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { QuestionviewComponent } from './questionview/questionview.component';
 import { AskComponent } from './ask/ask.component';
+import { ChatComponent } from './chat/chat.component';
 
 export const AppRoutes = [
   { path: '', redirectTo: 'first', pathMatch: 'full' },
@@ -10,5 +11,6 @@ export const AppRoutes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'view', component: QuestionviewComponent },
-  { path: 'ask', component: AskComponent }
+  { path: 'ask', component: AskComponent },
+  { path: 'chat', component: ChatComponent }
 ];

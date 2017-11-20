@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -11,11 +12,11 @@ import { AngularFireAuthModule } from 'angularfire2/auth'
 import { MaterialModule } from './material.module';
 import { AppRoutes } from './app.routes';
 
+import { ServerService } from './_services/server.service';
+import { SocketService } from './_services/socket.service';
 
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
-
-import { ServerService } from './_services/server.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
@@ -24,6 +25,7 @@ import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { environment } from './../environments/environment';
 import { QuestionviewComponent } from './questionview/questionview.component';
 import { AskComponent } from './ask/ask.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { AskComponent } from './ask/ask.component';
     RegisterComponent,
     AppNavbarComponent,
     QuestionviewComponent,
-    AskComponent
+    AskComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +46,10 @@ import { AskComponent } from './ask/ask.component';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule
   ],
-  providers: [ServerService],
+  providers: [ServerService, SocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

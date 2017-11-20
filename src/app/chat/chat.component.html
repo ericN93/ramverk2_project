@@ -1,0 +1,24 @@
+<div class="appHome">
+	<mat-card>
+
+		<p>People online {{nrOfClients}} </p>
+
+		<mat-form-field style="width:50%">
+			<input matInput placeholder="Nickname" [(ngModel)]="message.message.author">
+		</mat-form-field>
+
+
+		<mat-form-field style="width:50%">
+			<input matInput placeholder="Message" [(ngModel)]="message.message.message">
+		</mat-form-field>
+
+		<button mat-button (click)="sendMsg()">Send Message</button>
+
+		<div class="output">
+			<p [innerHtml]="htmlToAdd">
+			</p>
+		</div>
+
+
+	</mat-card>
+</div>
