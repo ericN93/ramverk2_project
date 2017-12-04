@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router";
+import { FirebaseService } from "../_services/firebase.service";
 
 @Component({
   selector: 'app-questionview',
@@ -8,9 +10,20 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class QuestionviewComponent implements OnInit {
 
-  constructor() { }
+    id: any;
+    thePost: any[];
 
-  ngOnInit() {
-  }
+
+    constructor(private firebaseService: FirebaseService,private router:Router,private route:ActivatedRoute) { }
+
+    ngOnInit() {
+      // get the book ID
+      this.id = this.route.snapshot.params['id'];
+      this.firebaseService.getPostDetails(this.id).subscribe(post => {
+        this.thePost = post
+      });
+    }
+
+
 
 }

@@ -1,0 +1,15 @@
+<mat-card style="width: 50%; margin: auto; margin-top: 10%; border-radius: 10px;">
+        <div>
+            <div style="text-align: center;">
+                <h2>Delete</h2>
+            </div>
+            <div>
+                <h3>You are about to delete {{thePost.title}} are you sure?</h3>
+                <p>{{thePost.description}}</p>
+                <p>{{thePost.points}}</p>
+            </div>
+            <div style="text-align: center;">
+                <button mat-button (click)="removePost()">Delete</button>
+            </div>
+        </div>
+</mat-card>

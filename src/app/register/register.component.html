@@ -8,24 +8,21 @@
             <h2>Register</h2>
         </div>
         <div style="text-align: center;">
-            <mat-form-field style="width:50%">
-                <input matInput placeholder="Username">
-            </mat-form-field>
+            <form>
+                <mat-form-field style="width:50%">
+                    <input matInput placeholder="Email" name="email" [(ngModel)]="email">
+                </mat-form-field>
 
-            <mat-form-field style="width:50%">
-                <input matInput placeholder="Name">
-            </mat-form-field>
-
-            <mat-form-field style="width:50%">
-                <input matInput placeholder="City">
-            </mat-form-field>
-
-            <mat-form-field style="width:50%">
-                <input matInput placeholder="Password">
-            </mat-form-field>
+                <mat-form-field style="width:50%">
+                    <input matInput type="password" placeholder="Password" name="password" [(ngModel)]="password">
+                </mat-form-field>
+                <br>
+                <b *ngIf="success">{{success}}</b>
+                <b *ngIf="error">{{error.message}}</b>
+            </form>
         </div>
         <div style="text-align: center;">
-            <button mat-button>Submit</button>
+            <button mat-button (click)="registerUser()">Submit</button>
         </div>
     </div>
 </mat-card>

@@ -9,15 +9,17 @@
         </div>
         <div style="text-align: center;">
             <mat-form-field style="width:50%">
-                <input matInput placeholder="Username">
+                <input matInput placeholder="Username" name="username" [(ngModel)]="username">
             </mat-form-field>
 
             <mat-form-field style="width:50%">
-                <input matInput placeholder="Password">
+                <input matInput placeholder="Password" name="password" [(ngModel)]="password">
             </mat-form-field>
+            <b *ngIf="success">{{success}}</b>
+            <b *ngIf="error">{{error.message}}</b>
         </div>
         <div style="text-align: center;">
-            <button mat-button>Submit</button>
+            <button mat-button (click)="loginUser()">Submit</button>
         </div>
     </div>
 </mat-card>

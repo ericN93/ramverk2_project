@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { FirebaseService } from "../_services/firebase.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-ask',
@@ -8,9 +10,23 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class AskComponent implements OnInit {
 
-  constructor() { }
+  title;
+  points;
+  description;
 
-  ngOnInit() {
-  }
+  constructor(private firebaseService:FirebaseService,  private router:Router) { }
+
+  ngOnInit() {}
+
+  submitAdd(){
+   let post = {
+     title: this.title,
+     points: 0,
+     description: this.description,
+   }
+   console.log('Post - ',post);
+   this.firebaseService.addPost(post);
+   this.router.navigate(['first']);
+ }
 
 }

@@ -1,19 +1,21 @@
 <mat-card style="width: 50%; margin: auto; margin-top: 10%; border-radius: 10px;">
-    <div>
-        <div style="text-align: center;">
-            <h2>Ask</h2>
-        </div>
-        <div style="text-align: center;">
-            <mat-form-field style="width:50%">
-                <input matInput placeholder="Title">
-            </mat-form-field>
+    <form (submit)="submitAdd()" #myForm="ngForm">
+        <div>
+            <div style="text-align: center;">
+                <h2>Ask</h2>
+            </div>
+            <div style="text-align: center;">
+                <mat-form-field style="width:50%">
+                    <input matInput placeholder="Title" name="title" [(ngModel)]="title" required>
+                </mat-form-field>
 
-            <mat-form-field style="width:50%">
-                <textarea matInput placeholder="Description" style="height:100px"></textarea>
-            </mat-form-field>
+                <mat-form-field style="width:50%">
+                    <textarea matInput placeholder="Description" style="height:100px" [(ngModel)]="description" name='description' required></textarea>
+                </mat-form-field>
+            </div>
+            <div style="text-align: center;">
+                <button mat-button [disabled]="!myForm.form.valid">Submit</button>
+            </div>
         </div>
-        <div style="text-align: center;">
-            <button mat-button>Submit</button>
-        </div>
-    </div>
+    </form>
 </mat-card>

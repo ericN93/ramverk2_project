@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { FirebaseService } from "../_services/firebase.service";
 
 @Component({
   selector: 'app-register',
@@ -8,9 +9,23 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  email: string;
+  password: string;
+  error:any;
+  success: string;
+
+  constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit() {
   }
 
+  registerUser(){
+     this.firebaseService.signUp(this.email, this.password).then((user) => {
+        console.log('success')
+        this.success= "Your account were successfully created"
+     }).catch((error) => {
+       this.error = error;
+       console.log(this.error);
+     });
+  }
 }

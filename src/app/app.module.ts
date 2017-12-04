@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth'
 
@@ -14,6 +15,8 @@ import { AppRoutes } from './app.routes';
 
 import { ServerService } from './_services/server.service';
 import { SocketService } from './_services/socket.service';
+import { FirebaseService } from './_services/firebase.service';
+import { SessionService } from './_services/session.service'
 
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
@@ -26,6 +29,10 @@ import { environment } from './../environments/environment';
 import { QuestionviewComponent } from './questionview/questionview.component';
 import { AskComponent } from './ask/ask.component';
 import { ChatComponent } from './chat/chat.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
+import { DeletePostComponent } from './delete-post/delete-post.component';
+
+import { AuthGuard } from './guard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -36,7 +43,9 @@ import { ChatComponent } from './chat/chat.component';
     AppNavbarComponent,
     QuestionviewComponent,
     AskComponent,
-    ChatComponent
+    ChatComponent,
+    EditPostComponent,
+    DeletePostComponent
   ],
   imports: [
     BrowserModule,
@@ -47,9 +56,10 @@ import { ChatComponent } from './chat/chat.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    FormsModule
+    FormsModule,
+
   ],
-  providers: [ServerService, SocketService],
+  providers: [ServerService, SocketService, FirebaseService, AngularFireDatabase, SessionService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

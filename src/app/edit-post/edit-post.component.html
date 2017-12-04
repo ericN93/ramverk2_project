@@ -1,0 +1,26 @@
+<mat-card style="width: 50%; margin: auto; margin-top: 10%; border-radius: 10px;">
+    <form (submit)="submitEdit()" #myForm="ngForm">
+        <div>
+            <div style="text-align: center;">
+                <h2>Edit</h2>
+            </div>
+            <div style="text-align: center;">
+                <mat-form-field style="width:50%">
+                    <input matInput placeholder="Title" name="title" [(ngModel)]="thePost.title" required>
+                </mat-form-field>
+
+                <mat-form-field style="width:50%">
+                    <textarea matInput placeholder="Description" style="height:100px" [(ngModel)]="thePost.description" name='description' required></textarea>
+                </mat-form-field>
+
+                <mat-form-field style="width:50%">
+                    <input matInput type="number" placeholder="Points" [(ngModel)]="thePost.points" name='points' disabled>
+                </mat-form-field>
+            </div>
+            <div style="text-align: center;">
+                <button mat-button [disabled]="!myForm.form.valid">Submit</button>
+                <button mat-button [routerLink]="['/delete/'+id]">Delete</button>
+            </div>
+        </div>
+    </form>
+</mat-card>

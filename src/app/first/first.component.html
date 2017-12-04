@@ -1,18 +1,22 @@
 <mat-card style="width: 80%; margin: auto; margin-top: 10%; border-radius: 10px;">
+
     <h1 style="text-align:center">Forum</h1>
+    <p *ngIf="user">You are signed in as: {{user.email}}</p>
     <ul>
         <mat-grid-list cols="3" rowHeight="3:1">
-            <div *ngFor="let temp of tempObservable | async ">
-                <mat-grid-tile class="questionIndex" routerLink="/view" routerLinkActive="active">
+            <div *ngFor="let post of allPosts">
+                <mat-grid-tile class="questionIndex">
                     <table>
                         <tr>
-                            <h2>{{temp.title}}</h2>
-                            <p>{{temp.description}}</p>
-                            <p>{{temp.points}}</p>
+                            <h2>{{post.title}}</h2>
+
+                            <button mat-button [routerLink]="['/view/'+post.$key]">view</button>
+                            <button mat-button [routerLink]="['/edit/'+post.$key]">edit</button>
                         </tr>
                     </table>
                 </mat-grid-tile>
             </div>
         </mat-grid-list>
     </ul>
+
 </mat-card>
