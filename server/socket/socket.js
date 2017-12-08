@@ -1,8 +1,10 @@
 'use strict';
 
 const webSocket = require('ws');
+const Module = require('simple-command-in-chat');
 
 module.exports = function(server) {
+	let command = new Module();
 	const wss = new webSocket.Server({
 		server: server,
 		clientTracking: true,
@@ -10,11 +12,12 @@ module.exports = function(server) {
 	});
 
 	let sendToAll = (ws, data) => {
+		data.message.message = command.getCheckCommand(data.message.message)
 		wss.clients.forEach((client) => {
 	      	if (data.type==='connection'){
 				client.send(JSON.stringify(data));
 			} else {
-				if(client !== ws && client.readyState === webSocket.OPEN){
+				if(client.readyState === webSocket.OPEN){
 					client.send(JSON.stringify(data));
 				}
 			}

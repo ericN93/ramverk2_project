@@ -24,7 +24,7 @@ export class FirstComponent implements OnInit {
 
 
     ngOnInit() {
-        this.firebaseService.getBooks().subscribe(posts =>{
+        this.firebaseService.getPost().subscribe(posts =>{
           this.allPosts = posts;
       });
     }

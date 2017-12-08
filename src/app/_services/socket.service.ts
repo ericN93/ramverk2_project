@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject, Observer } from 'rxjs/Rx';
 import { map } from 'rxjs/operators';
-import { ServerService } from './server.service';
 
 const CHAT_URL = 'ws://localhost:3000/';
 
@@ -17,7 +16,7 @@ export class SocketService {
 	public messages: Subject<Message>;
 	private subject: Subject<MessageEvent>;
 
-	constructor(wsService: ServerService) {
+	constructor() {
 		this.messages = <Subject<Message>>this
 		.connect(CHAT_URL)
 		.map((response: MessageEvent) => {

@@ -16,7 +16,6 @@ import { AppRoutes } from './app.routes';
 import { ServerService } from './_services/server.service';
 import { SocketService } from './_services/socket.service';
 import { FirebaseService } from './_services/firebase.service';
-import { SessionService } from './_services/session.service'
 
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
@@ -59,7 +58,7 @@ import { AuthGuard } from './guard/auth.guard';
     FormsModule,
 
   ],
-  providers: [ServerService, SocketService, FirebaseService, AngularFireDatabase, SessionService, AuthGuard],
+  providers: [ServerService, SocketService, FirebaseService, AngularFireDatabase, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

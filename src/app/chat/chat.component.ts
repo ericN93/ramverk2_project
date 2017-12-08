@@ -1,5 +1,6 @@
-	import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SocketService } from '../_services/socket.service';
+
 
 const CHAT_URL = 'ws://localhost:3000';
 
@@ -18,7 +19,6 @@ export class ChatComponent {
 
 	constructor(private chatService: SocketService) {
 		chatService.messages.subscribe(msg => {
-			//let parse = JSON.parse(msg)
 			let now = new Date();
 	      	let timestamp = now.toLocaleTimeString();
 			console.log(msg)
@@ -51,10 +51,6 @@ export class ChatComponent {
 	htmlToAdd="";
 
 	sendMsg() {
-		let now = new Date();
-		let timestamp = now.toLocaleTimeString();
-
-		this.htmlToAdd += '[' + timestamp +  '] You:'  + this.message.message.message +  '<br>';
 		this.chatService.messages.next(this.message);
 		this.message.message.message = '';
 	}

@@ -72,7 +72,7 @@ export class FirebaseService {
       });
   }
 
-  getBooks() {
+  getPost() {
     this.posts = this.db.list('/forum') as FirebaseListObservable<any[]>;
     return this.posts;
   }
