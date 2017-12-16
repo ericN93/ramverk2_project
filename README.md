@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/ericN93/ramverk2_project.svg?branch=master)](https://travis-ci.org/ericN93/ramverk2_project)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ericN93/ramverk2_project/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ericN93/ramverk2_project/?branch=master)
 [![codecov](https://codecov.io/gh/ericN93/ramverk2_project/branch/master/graph/badge.svg)](https://codecov.io/gh/ericN93/ramverk2_project)
+[![Code Coverage](https://scrutinizer-ci.com/g/ericN93/ramverk2_project/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/ericN93/ramverk2_project/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/ericN93/ramverk2/badges/build.png?b=master)](https://scrutinizer-ci.com/g/ericN93/ramverk2/build-status/master)
 
 
