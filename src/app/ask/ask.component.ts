@@ -16,7 +16,7 @@ export class AskComponent implements OnInit {
   user: any;
 
 
-  constructor(private firebaseService:FirebaseService,  private router:Router) {
+  constructor(private firebaseService:FirebaseService,  private router?:Router) {
       this.user = this.firebaseService.currentUser()
   }
 

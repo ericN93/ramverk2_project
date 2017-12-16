@@ -19,13 +19,13 @@ export class FirebaseService {
   email: string;
   user: FirebaseObjectObservable<any>;
 
-    constructor(private db: AngularFireDatabase, public af: AngularFireAuth) {
+    constructor(private db: AngularFireDatabase, public af: AngularFireAuth, public router?: Router) {
         this.af.authState.subscribe((auth) => {
              this.authState = auth;
              console.log(this.authState)
             if(this.authState == null){
                 console.log('in if')
-                //this.router.navigate(['/login']);
+                this.router.navigate(['/login']);
             }
 
 
@@ -43,9 +43,9 @@ export class FirebaseService {
     }
 
     // Returns
-    currentUserObservable(): any {
+    /*currentUserObservable(): any {
       return this.af.authState;
-    }
+  }*/
 
     // Returns current user UID
     currentUserId(): string {
@@ -64,12 +64,12 @@ export class FirebaseService {
     return this.af.auth.signOut();
   }
 
-  addUserInfo(){
+  /*addUserInfo(){
       this.users.push({
         email: this.email,
         displayName: this.displayName
       });
-  }
+  }*/
 
   getPost() {
     this.posts = this.db.list('/forum') as FirebaseListObservable<any[]>;
