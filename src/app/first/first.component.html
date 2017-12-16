@@ -9,9 +9,8 @@
                     <table>
                         <tr>
                             <h2>{{post.title}}</h2>
-
                             <button mat-button [routerLink]="['/view/'+post.$key]">view</button>
-                            <button mat-button [routerLink]="['/edit/'+post.$key]">edit</button>
+                            <button mat-button *ngIf="user.email == post.author" [routerLink]="['/edit/'+post.$key]">edit</button>
                         </tr>
                     </table>
                 </mat-grid-tile>

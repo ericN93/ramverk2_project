@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
-import { AngularFireAuthModule } from 'angularfire2/auth'
 import { AngularFireAuth } from "angularfire2/auth";
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/map';
@@ -20,17 +19,17 @@ export class FirebaseService {
   email: string;
   user: FirebaseObjectObservable<any>;
 
-    constructor(private db: AngularFireDatabase, public af: AngularFireAuth, private router: Router) {
+    constructor(private db: AngularFireDatabase, public af: AngularFireAuth) {
         this.af.authState.subscribe((auth) => {
              this.authState = auth;
              console.log(this.authState)
             if(this.authState == null){
                 console.log('in if')
-                this.router.navigate(['/login']);
+                //this.router.navigate(['/login']);
             }
 
 
-         })
+        })
     }
 
     // Returns true if user is logged in
@@ -89,7 +88,7 @@ export class FirebaseService {
   }
 
   updatePost(id, postDetails){
-    var filteredPost = JSON.parse(JSON.stringify(postDetails)); //removes the undefined fields
+    var filteredPost = JSON.parse(JSON.stringify(postDetails));
     return this.posts.update(id,filteredPost);
   }
 

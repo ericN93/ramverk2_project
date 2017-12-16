@@ -15,10 +15,10 @@ export class EditPostComponent implements OnInit {
   thePost: any[];
 
 
-
   constructor( private firebaseService:FirebaseService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute) {
+    }
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];

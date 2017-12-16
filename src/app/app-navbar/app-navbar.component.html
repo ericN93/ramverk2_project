@@ -1,9 +1,10 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
+
     <button mat-button  routerLink="/first" routerLinkActive="active">Home</button>
     <button mat-button  routerLink="/ask" routerLinkActive="active" style="text-align: right;">Ask</button>
     <button mat-button  routerLink="/chat" routerLinkActive="active" style="text-align: right;">Chat</button>
-    <button mat-button  routerLink="/login" routerLinkActive="active" style="text-align: right;">Login</button>
-    <button mat-button  (click)="logout()">Logout</button>
-  </mat-toolbar-row>
+
+    <button mat-button *ngIf="firebase.authState == null" routerLink="/login" routerLinkActive="active" style="text-align: right;">Login</button>
+    <button mat-button *ngIf="firebase.authState != null" (click)="logout()">Logout</button>
+
 </mat-toolbar>

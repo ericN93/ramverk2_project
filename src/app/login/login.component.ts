@@ -13,9 +13,12 @@ export class LoginComponent implements OnInit {
   password: string;
   success: string;
   error: any;
-  constructor(private firebase:FirebaseService, private router: Router) { }
+
+  constructor(private firebase:FirebaseService, private router: Router) {
+   }
 
   ngOnInit() {
+
   }
 
   loginUser(){

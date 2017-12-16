@@ -13,8 +13,12 @@ export class AskComponent implements OnInit {
   title;
   points;
   description;
+  user: any;
 
-  constructor(private firebaseService:FirebaseService,  private router:Router) { }
+
+  constructor(private firebaseService:FirebaseService,  private router:Router) {
+      this.user = this.firebaseService.currentUser()
+  }
 
   ngOnInit() {}
 
@@ -23,6 +27,7 @@ export class AskComponent implements OnInit {
      title: this.title,
      points: 0,
      description: this.description,
+     author: this.user.email,
    }
    console.log('Post - ',post);
    this.firebaseService.addPost(post);

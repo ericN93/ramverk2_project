@@ -1,5 +1,5 @@
 <mat-card style="width: 50%; margin: auto; margin-top: 10%; border-radius: 10px;">
-    <div>
+    <div *ngIf="firebase.authState == null">
         <div>
             <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
             <button mat-button routerLink="/register" routerLinkActive="active">Register</button>
@@ -16,10 +16,14 @@
                 <input matInput placeholder="Password" name="password" [(ngModel)]="password">
             </mat-form-field>
             <b *ngIf="success">{{success}}</b>
+            <br>
             <b *ngIf="error">{{error.message}}</b>
         </div>
         <div style="text-align: center;">
             <button mat-button (click)="loginUser()">Submit</button>
         </div>
+    </div>
+    <div *ngIf="firebase.authState != null">
+        <h2>Du är inloggad</h2>
     </div>
 </mat-card>

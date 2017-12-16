@@ -21,11 +21,6 @@ export class ChatComponent {
 		chatService.messages.subscribe(msg => {
 			let now = new Date();
 	      	let timestamp = now.toLocaleTimeString();
-			console.log(msg)
-			console.log('message')
-			console.log(msg.message.message)
-			console.log('author')
-			console.log(msg.message.author)
 			if(msg){
 				if(msg.type==='connection'){
 					this.nrOfClients = msg.data.clients;

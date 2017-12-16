@@ -13,7 +13,6 @@ import { AngularFireAuthModule } from 'angularfire2/auth'
 import { MaterialModule } from './material.module';
 import { AppRoutes } from './app.routes';
 
-import { ServerService } from './_services/server.service';
 import { SocketService } from './_services/socket.service';
 import { FirebaseService } from './_services/firebase.service';
 
@@ -58,7 +57,7 @@ import { AuthGuard } from './guard/auth.guard';
     FormsModule,
 
   ],
-  providers: [ServerService, SocketService, FirebaseService, AngularFireDatabase, AuthGuard],
+  providers: [ SocketService, FirebaseService, AngularFireDatabase, AuthGuard, AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

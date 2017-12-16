@@ -14,7 +14,7 @@ export class AppComponent {
 
 
   constructor(private firebase:FirebaseService, private router: Router, public af: AngularFireAuth){
-    
+
   }
 
 }
