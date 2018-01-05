@@ -1,0 +1,33 @@
+version: "3"
+services:
+    server:
+        build:
+            context: .
+            dockerfile: ./docker/Dockerfile
+        ports:
+            - 3000:3000
+        command: "npm start"
+
+    docker-latest:
+        build:
+            context: .
+            dockerfile: ./docker/Dockerfile-latest
+        ports:
+            - 3001:3001
+        command: "npm run docker-latest"
+
+    docker-8:
+        build:
+            context: .
+            dockerfile: ./docker/Dockerfile-8
+        ports:
+            - 3002:3002
+        command: "npm run docker-8"
+
+    docker-7:
+        build:
+            context: .
+            dockerfile: ./docker/Dockerfile-7
+        ports:
+            - 3003:3003
+        command: "npm run docker-7"

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SocketService } from '../_services/socket.service';
+import { FirebaseService } from '../_services/firebase.service';
 
 
 const CHAT_URL = 'ws://localhost:3000';
@@ -16,8 +17,10 @@ export interface Message {
 	providers: [ SocketService ]
 })
 export class ChatComponent {
+	user: any;
 
-	constructor(private chatService: SocketService) {
+	constructor(private chatService: SocketService, private firebaseService: FirebaseService) {
+		this.user = this.firebaseService.currentUser()
 		chatService.messages.subscribe(msg => {
 			let now = new Date();
 	      	let timestamp = now.toLocaleTimeString();
@@ -37,7 +40,7 @@ export class ChatComponent {
 
 
 	message = {
-		message: { author:'temp', message:'this is a test message'},
+		message: { author: 'temp', message:'Type your message here'},
 		data: {clients: 0},
 		type: 'none'
 	}
@@ -46,6 +49,7 @@ export class ChatComponent {
 	htmlToAdd="";
 
 	sendMsg() {
+		this.message.message.author = this.user.email;
 		this.chatService.messages.next(this.message);
 		this.message.message.message = '';
 	}

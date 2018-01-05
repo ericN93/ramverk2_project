@@ -1,13 +1,13 @@
 <mat-card style="width: 80%; margin: auto; margin-top: 10%; border-radius: 10px;">
 
     <h1 style="text-align:center">Forum</h1>
-    <p *ngIf="user">You are signed in as: {{user.email}}</p>
+    <p style="text-align:center">Signed in as: {{user.email}}</p>
     <ul>
         <mat-grid-list cols="3" rowHeight="3:1">
             <div *ngFor="let post of allPosts">
                 <mat-grid-tile class="questionIndex">
                     <table>
-                        <tr>
+                        <tr style="text-align:center">
                             <h2>{{post.title}}</h2>
                             <button mat-button [routerLink]="['/view/'+post.$key]">view</button>
                             <button mat-button *ngIf="user.email == post.author" [routerLink]="['/edit/'+post.$key]">edit</button>

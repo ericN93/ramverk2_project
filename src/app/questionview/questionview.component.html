@@ -1,8 +1,10 @@
-<mat-card style="width: 80%; margin: auto; margin-top: 10%; border-radius: 10px;">
-    <h1 style="text-align:center">questionview</h1>
-    <h3>{{thePost.title}}</h3>
-    <p>{{thePost.description}}</p>
-    <p>{{thePost.points}}</p>
-
+<mat-card style="width: 40%; margin: auto; margin-top: 10%; border-radius: 10px;">
+    <div style="text-align:center">
+        <h1>{{thePost.title}}</h1>
+        <h5>By: {{thePost.author}}</h5>
+        <div style="max-height: 250px; overflow:auto">
+            <p>{{thePost.description}}</p>
+        </div>
+    </div>
 
 </mat-card>

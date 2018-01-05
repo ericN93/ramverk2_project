@@ -25,7 +25,6 @@ export class AskComponent implements OnInit {
   submitAdd(){
    let post = {
      title: this.title,
-     points: 0,
      description: this.description,
      author: this.user.email,
    }

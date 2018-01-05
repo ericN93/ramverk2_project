@@ -27,8 +27,6 @@ export class FirebaseService {
                 console.log('in if')
                 this.router.navigate(['/login']);
             }
-
-
         })
     }
 
