@@ -3,9 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
     "start": "node server.js",
-    "postinstall": "ng build --aot -prod",
+    "postinstall": "ng build --aot --target=production",
     "build": "ng build",
     "test": "ng test",
     "codecov": "codecov --token=af5774d4-9e4e-4282-96cd-dd3f996f705c",
@@ -18,8 +17,8 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/cli": "1.6.0",
-  	"@angular/compiler-cli": "^5.1.0",
+    "@angular/cli": "1.5.0",
+    "@angular/compiler-cli": "^5.0.0",
     "@angular/animations": "^5.0.0",
     "@angular/cdk": "^5.0.0-rc0",
     "@angular/common": "^5.0.0",
