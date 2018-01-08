@@ -15,18 +15,18 @@ Då google har utvecklat Angular och nu äger Firebase, så integrerar de båda 
 
 
 ## Installation
-När du har hämtat ner projektet gör du en "npm install", när alla dependicies har installerat kör du igång servern med "npm start"(som då kör på port 3000) sedan "ng serve" i ett annat fönster för att starta upp applikationen. Därefter går du in på localhost med porten 4200.
+När du har hämtat ner projektet gör du en ```npm install```, när alla dependicies har installerat kör du igång servern med ```npm start```(som då kör på port 3000) sedan "ng serve" i ett annat fönster för att starta upp applikationen. Därefter går du in på localhost med porten 4200.
 
-För att Köra igång servern med en docker-kontainer kör du "npm run start-docker" och stoppar den med "npm run stop-docker".
+För att Köra igång servern med en docker-kontainer kör du ```npm run start-docker``` och stoppar den med ```npm run stop-docker```.
 
 
 ## Testning
 
 Jag använder mig av karma, jasmine och PhantomJS för att utföra min testsuite. Som tidigare nämnt hade jag problem att utföra testing i en service som används mycket i mitt projekt, därav har jag inte kunnat testa dem delarna som är beroende av den servicen. Den testningen som jag har kunnat utföra görs för "socketService". Teknikerna jag har använt har varit självklara för min del då karma, jasmine fungerar riktigt bra med Angular2+, PhantomJS var något som jag var tvungen att börja använda då testning med docker krävde det. För mitt projekt var det mycket svårt att få kodtäckning då jag hade problem med den servicen.
 
-Du kan köra "npm run test" för att utföra testerna och med codecoverage kör du "npm run coverage". För att sedan se kodtäckningen går du in i mappen "coverage/src" sedan öppnar du filen "index.html" med din webläsare.
+Du kan köra ```npm run test``` för att utföra testerna och med codecoverage kör du ```npm run coverage```. För att sedan se kodtäckningen går du in i mappen "coverage/src" sedan öppnar du filen "index.html" med din webläsare.
 
-För att köra testing med docker kan du köra följande kommandon: "npm run docker-latest" för senaste node versionen, "npm run docker-8" för node version 8 och "npm run docker-7" för node version 7. Först behöver du fixa Images med "npm run docker-build".
+För att köra testing med docker kan du köra följande kommandon: ```npm run docker-latest``` för senaste node versionen, ```npm run docker-8``` för node version 8 och ```npm run docker-7``` för node version 7. Först behöver du fixa Images med ```npm run docker-build```.
 
 
 ## Kedja för Continuous integration
