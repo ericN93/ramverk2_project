@@ -58,4 +58,4 @@ Jag tycker NPM som packetverktyg är magiskt, det är extremt simpelt att använ
 https://www.npmjs.com/package/simple-command-in-chat
 
 ## Artikel (Krav 6)
-I min artikel som ni kan nå på "LÄNK" skriver jag om Googles Firebase. Jag skriver lite kort vad det är, hur det uppstod, sedan skriver jag lite funktionaliteten som Firebase består. Syftet med denna artiklen är att få utvecklare att öppna ögonen för denna nya teknik men samtidigt veta dess föredelar och dess nackdelar. Artiklen nås HÄR https://github.com/ericN93/ramverk2_project/blob/master/ARTICLE.md
+I min artikel som ni kan nå på https://github.com/ericN93/ramverk2_project/blob/master/ARTICLE.md skriver jag om Googles Firebase. Jag skriver lite kort vad det är, hur det uppstod, sedan skriver jag lite funktionaliteten som Firebase består. Syftet med denna artiklen är att få utvecklare att öppna ögonen för denna nya teknik men samtidigt veta dess föredelar och dess nackdelar.
