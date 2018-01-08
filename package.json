@@ -5,10 +5,11 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
+    "postinstall": "ng build --aot -prod",
     "build": "ng build",
-    "test": "ng test --browsers Chrome",
+    "test": "ng test",
     "codecov": "codecov --token=af5774d4-9e4e-4282-96cd-dd3f996f705c",
-    "coverage": "ng test -cc --browsers Chrome",
+    "coverage": "ng test -cc",
     "start-docker": "docker-compose up -d server",
     "stop-docker": "docker-compose down",
     "docker-latest": "karma start --cc --browsers PhantomJS",
@@ -17,6 +18,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "1.6.0",
     "@angular/animations": "^5.0.0",
     "@angular/cdk": "^5.0.0-rc0",
     "@angular/common": "^5.0.0",
@@ -36,7 +38,7 @@
     "rxjs": "^5.5.2",
     "simple-command-in-chat": "^1.0.0",
     "ws": "^3.3.2",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
   },
   "devDependencies": {
     "@angular/cli": "1.5.0",
