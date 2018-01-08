@@ -24,7 +24,7 @@ För att Köra igång servern med en docker-kontainer kör du "npm run start-doc
 
 Jag använder mig av karma, jasmine och PhantomJS för att utföra min testsuite. Som tidigare nämnt hade jag problem att utföra testing i en service som används mycket i mitt projekt, därav har jag inte kunnat testa dem delarna som är beroende av den servicen. Den testningen som jag har kunnat utföra görs för "socketService". Teknikerna jag har använt har varit självklara för min del då karma, jasmine fungerar riktigt bra med Angular2+, PhantomJS var något som jag var tvungen att börja använda då testning med docker krävde det. För mitt projekt var det mycket svårt att få kodtäckning då jag hade problem med den servicen.
 
-Du kan köra "npm test" för att utföra testerna och med codecoverage kör du ng test -cc. För att sedan se kodtäckningen går du in i mappen "coverage/src" sedan öppnar du filen "index.html" med din webläsare. Jag får ett fel som lyder "Chrome 63.0.3239 (Mac OS X 10.12.6) ERROR" vet inte riktigt vad som kan vara/är felet men det funkar utan problem på docker, så antar jag att det något fel på min maskin som jag inte riktigt vet hur jag ska fixa.
+Du kan köra "npm run test" för att utföra testerna och med codecoverage kör du "npm run coverage". För att sedan se kodtäckningen går du in i mappen "coverage/src" sedan öppnar du filen "index.html" med din webläsare.
 
 För att köra testing med docker kan du köra följande kommandon: "npm run docker-latest" för senaste node versionen, "npm run docker-8" för node version 8 och "npm run docker-7" för node version 7. Först behöver du fixa Images med "npm run docker-build".
 
