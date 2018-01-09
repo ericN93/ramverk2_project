@@ -15,7 +15,7 @@ Då google har utvecklat Angular och nu äger Firebase, så integrerar de båda 
 
 
 ## Installation
-När du har hämtat ner projektet gör du en ```npm install```, när alla dependicies har installerat kör du igång servern med ```npm start```(som då kör på port 3000) sedan "ng serve" i ett annat fönster för att starta upp applikationen. Därefter går du in på localhost med porten 4200.
+När du har hämtat ner projektet gör du en ```npm install```, när alla dependicies har installerat kör du igång servern med ```npm start```(som då kör på port 3000) sedan ```ng serve``` i ett annat fönster för att starta upp applikationen. Därefter går du in på localhost med porten 4200.
 
 För att Köra igång servern med en docker-kontainer kör du ```npm run start-docker``` och stoppar den med ```npm run stop-docker```.
 

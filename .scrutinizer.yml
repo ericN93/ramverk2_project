@@ -12,7 +12,7 @@ build:
     tests:
         override:
             -
-                command: 'ng test -cc'
+                command: 'npm run coverage'
                 coverage:
                     file: 'coverage/clover.xml'
                     format: 'clover'
